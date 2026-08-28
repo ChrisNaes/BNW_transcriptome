@@ -107,6 +107,7 @@ Cross-tissue and functional analyses
       |
       v
 Figures and supplementary tables
+```
 
 ## Differential expression analysis
 
