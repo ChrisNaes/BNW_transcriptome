@@ -1,18 +1,3 @@
-#!/bin/bash
-#SBATCH --job-name=Fastq-dump	      # Job name
-#SBATCH --partition=batch             # Partition (queue) name
-#SBATCH --ntasks=1                    # Run on a single CPU
-#SBATCH --mem=30gb                     # Job memory request
-#SBATCH --time=24:00:00               # Time limit hrs:min:sec
-#SBATCH --output=/home/cn68176/Log/%x.%j.out            # Standard output log
-#SBATCH --error=/home/cn68176/Log/%x.%j.err             # Standard error log
-#SBATCH --mail-type=END,FAIL          # Mail events (NONE, BEGIN, END, FAIL, ALL)
-#SBATCH --mail-user=cn68176@uga.edu   # Where to send mail  
-
-INDIR="/scratch/cn68176/RNAseq_BNW/Genome/Tissues"
-OUTDIR="/scratch/cn68176/RNAseq_BNW/Genome/Tissues"
-INPUT_DIR="$INDIR"
-
 ml SRA-Toolkit
 
 cd $INDIR
