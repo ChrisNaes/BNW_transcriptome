@@ -107,3 +107,78 @@ Cross-tissue and functional analyses
       |
       v
 Figures and supplementary tables
+
+## Differential expression analysis
+
+Differential expression was analyzed independently within each tissue using DESeq2.
+
+Genes were retained if they had at least 10 reads in at least two samples within the corresponding tissue.
+
+Disease status was modeled as the explanatory variable, with healthy wombats used as the reference group.
+
+Genes were classified as differentially expressed when:
+
+Benjamini-Hochberg FDR < 0.05
+and
+|log2 fold-change| >= 2
+
+Positive log2 fold-change values therefore indicate higher expression in wombats with advanced crusted mange relative to healthy wombats.
+
+## Functional annotation
+
+Gene-level differential expression results were linked to NCBI Gene Identifiers and Gene Ontology annotations.
+
+GO-term transcriptional summaries were calculated using all genes for which both a log2 fold-change estimate and GO annotation were available.
+
+These summaries describe the direction and magnitude of transcriptional regulation among genes associated with each GO term and should not be interpreted as conventional over-representation or gene-set enrichment tests.
+
+Targeted functional modules were subsequently constructed using predefined GO-term keyword searches.
+
+## Software
+
+Major software used in the analysis included:
+
+FastQC v0.11.9
+MultiQC v1.14
+TrimGalore v0.6.7
+cutadapt v4.5
+HISAT2 v2.2.2
+SAMtools v1.18
+StringTie v3.0.0
+Subread / featureCounts v2.0.6
+DESeq2 v1.52.0
+
+Additional R package versions are recorded in the analysis environment/session information.
+
+## Reproducibility
+
+The complete analysis was rerun on a high-performance computing cluster using the scripts provided in this repository.
+
+Where possible, intermediate and final outputs, software versions, command-line logs, and reference files were retained to provide a reproducible record of the analysis.
+
+Large sequencing and alignment files are not stored on GitHub.
+
+## Data availability
+
+Raw RNA-sequencing data generated in this study have been deposited in the NCBI Sequence Read Archive under BioProject accession [ADD BIOPROJECT ACCESSION].
+
+Public RNA-seq data used for transcript reconstruction are available under BioProject PRJNA484583.
+
+The bare-nosed wombat reference genome is available under accession GCA_028626985.1.
+
+Processed data supporting the study are provided with the manuscript as Supplementary Information.
+
+## Citation
+
+If you use code or resources from this repository, please cite:
+
+Naesborg-Nielsen C., Fraser T., Mounsey K., Carver S.
+Extended multi-organ pathogenesis results from severe Sarcoptes scabiei infestation of wombats.
+[Journal and DOI to be added following publication]
+
+## Contact
+
+For questions regarding this repository or analysis, please contact:
+
+Christina Naesborg-Nielsen
+christina.naesborgnielsen@uga.edu
